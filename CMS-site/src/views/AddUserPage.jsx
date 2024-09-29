@@ -3,7 +3,7 @@ import axios from "axios";
 import Toastify from "toastify-js"
 import { useNavigate } from "react-router-dom";
 
-export default function LoginPage(baseUrl) {
+export default function LoginPage() {
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -54,84 +54,85 @@ export default function LoginPage(baseUrl) {
 
     return (
         <>
-            <div className="flex flex-col items-center justify-center min-h-screen bg-base-100 p-4">
-                <div className="w-full max-w-xl p-6 bg-base-200 rounded-lg shadow-md animate-fadeIn transform transition-transform duration-300 ease-out hover:scale-105">
-                    <h1 className="text-3xl font-semibold text-center text-accent-focus mb-6">
+            <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 p-4">
+                <div className="w-full max-w-xl p-6 bg-white rounded-lg shadow-md animate-fadeIn transform transition-transform duration-300 ease-out hover:scale-105 border border-gray-200">
+                    <h1 className="text-3xl font-semibold text-center text-gray-600 mb-6">
                         Add New User
                     </h1>
 
                     <form className="space-y-4" onSubmit={handleAddUser}>
                         <div>
                             <label className="label">
-                                <span className="text-base label-text">Email*</span>
-                            </label>
-                            <input
-                                type="email"
-                                placeholder="Enter Email"
-                                className="w-full input input-bordered input-accent"
-                                onChange={(e) => setEmail(e.target.value)}
-                                required
-                            />
-                        </div>
-                        <div>
-                            <label className="label">
-                                <span className="text-base label-text">Password*</span>
-                            </label>
-                            <input
-                                type="password"
-                                placeholder="Enter Password"
-                                className="w-full input input-bordered input-accent"
-                                onChange={(e) => setPassword(e.target.value)}
-                                required
-                            />
-                        </div>
-                        <div>
-                            <label className="label">
-                                <span className="text-base label-text">Username*</span>
+                                <span className="text-base label-text text-gray-700">Username*</span>
                             </label>
                             <input
                                 type="text"
                                 placeholder="Enter Username"
-                                className="w-full input input-bordered input-accent"
+                                className="w-full input input-bordered input-accent bg-white-100"
                                 onChange={(e) => setUsername(e.target.value)}
                                 required
                             />
                         </div>
                         <div>
                             <label className="label">
-                                <span className="text-base label-text">Phone Number*</span>
+                                <span className="text-base label-text text-gray-700">Email*</span>
+                            </label>
+                            <input
+                                type="email"
+                                placeholder="Enter Email"
+                                className="w-full input input-bordered input-accent bg-white-100"
+                                onChange={(e) => setEmail(e.target.value)}
+                                required
+                            />
+                        </div>
+                        <div>
+                            <label className="label">
+                                <span className="text-base label-text text-gray-700">Password*</span>
+                            </label>
+                            <input
+                                type="password"
+                                placeholder="Enter Password"
+                                className="w-full input input-bordered input-accent bg-white-100"
+                                onChange={(e) => setPassword(e.target.value)}
+                                required
+                            />
+                        </div>
+                        <div>
+                            <label className="label">
+                                <span className="text-base label-text text-gray-700">
+                                    Phone Number*
+                                </span>
                             </label>
                             <input
                                 type="tel"
                                 placeholder="Enter Phone Number"
-                                className="w-full input input-bordered input-accent"
+                                className="w-full input input-bordered input-accent bg-white-100"
                                 onChange={(e) => setPhoneNumber(e.target.value)}
                                 required
                             />
                         </div>
                         <div>
                             <label className="label">
-                                <span className="text-base label-text">Address*</span>
+                                <span className="text-base label-text text-gray-700">Address*</span>
                             </label>
                             <input
                                 type="text"
                                 placeholder="Enter Address"
-                                className="w-full input input-bordered input-accent"
+                                className="w-full input input-bordered input-accent bg-white-100"
                                 onChange={(e) => setAddress(e.target.value)}
                                 required
                             />
                         </div>
 
-                        {/* Tombol "Add User" dan "Back" ditaruh sebelahan */}
                         <div className="flex justify-between">
                             <button
                                 type="submit"
-                                className="btn btn-accent w-[48%] transition-transform duration-300 transform hover:scale-105">
+                                className="float-right bg-blue-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-900 focus:outline-none focus:ring focus:ring-blue-500">
                                 Add User
                             </button>
                             <button
                                 type="button"
-                                className="btn btn-secondary w-[48%] transition-transform duration-300 transform hover:scale-105"
+                                className="float-right bg-blue-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-red-700 focus:outline-none focus:ring focus:ring-blue-500"
                                 onClick={() => navigate("/")}>
                                 Cancel
                             </button>
@@ -140,5 +141,6 @@ export default function LoginPage(baseUrl) {
                 </div>
             </div>
         </>
+
     );
 }

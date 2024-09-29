@@ -15,7 +15,6 @@ export default function Card({ posts }) {
                     <img
                         src={posts.imgUrl}
                         alt="posts"
-                        className="w-full h-80 object-cover border-b border-gray-200" // Menyesuaikan ukuran gambar agar rapih
                     />
                 </figure>
                 <div className="card-body">

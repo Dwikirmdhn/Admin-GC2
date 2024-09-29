@@ -15,7 +15,7 @@ const baseUrl = 'https://h8-phase2-gc.vercel.app'
 const router = createBrowserRouter([
     {
         path: "/login",
-        element: <LoginPage baseUrl={baseUrl} />,
+        element: <LoginPage />,
         loader: () => {
             if (localStorage.access_token) {
                 Toastify({
@@ -62,27 +62,27 @@ const router = createBrowserRouter([
         children: [
             {
                 path: "/",
-                element: <Home baseUrl={baseUrl} />,
+                element: <Home />,
             },
             {
                 path: "/add",
-                element: <AddPage baseUrl={baseUrl} />,
+                element: <AddPage />,
             },
             {
                 path: "/add-user",
-                element: <AddUserPage baseUrl={baseUrl} />,
+                element: <AddUserPage />,
             },
             {
                 path: "/categories",
-                element: <Categories baseUrl={baseUrl} />,
+                element: <Categories />,
             },
             {
                 path: "/edit/:id",
-                element: <Edit baseUrl={baseUrl} />,
+                element: <Edit />,
             },
             {
                 path: "/patch/:id",
-                element: <ChangeImage baseUrl={baseUrl} />,
+                element: <ChangeImage />,
             },
         ],
     },

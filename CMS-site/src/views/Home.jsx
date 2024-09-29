@@ -4,13 +4,11 @@ import { Link, useNavigate } from "react-router-dom";
 import Toastify from "toastify-js";
 import Loading from "../assets/Infinity@1x-1.2s-200px-200px.svg";
 
-export default function Home({ baseUrl }) {
+export default function Home({ }) {
   const [posts, setProducts] = useState([]);
   const [loading, setLoading] = useState(false)
 
   const navigate = useNavigate();
-
-
 
   async function fetchPost() {
     try {
